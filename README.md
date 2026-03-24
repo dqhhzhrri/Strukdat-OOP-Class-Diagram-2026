@@ -1,5 +1,5 @@
 # Strukdat-OOP-Class-Diagram-2026
-Repository yang berisi penyelesaian problem di sekitar saya dengan menggunakan paradigma OOP untuk tugas kuliah mata kuliah Struktur Data dan pemograman beriorentasi objek.
+Repository yang berisi penyelesaian problem di sekitar saya dengan menggunakan paradigma OOP untuk tugas kuliah mata kuliah Struktur Data dan pemograman beriorentasi objek. Penyelesaian tugas ini dimulai dari pembuatan diagram menggunakan Mermaid Ai dan dilanjutkan dengan penyelesaian menggunakan program menggunakan bahasa Java.
 
 ## Biodata Mahasiswa
 Nama : D'Qhaizhar Ari Dhiaulhaq
@@ -232,7 +232,7 @@ class Location_Service implements Navigasi_Sistem { //interface ke navigasi_sist
 ## Dokumentasi output
 Berikut merupakan dokumentasi saat kode pemograman saya dijalankan.
 
-![Image](https://github.com/user-attachments/assets/4aa7b431-6b16-41fd-927e-87782cbcaaa2)
+![Image](https://github.com/user-attachments/assets/800a3c61-a4b9-41ea-9076-aba0dbf782a1)
 
 ## Penjelasan prinsip-prinsip OOP yang digunakan dalam case ini
 Project ini menerapkan 4 pilar utama Pemrograman Berorientasi Objek (OOP) menggunakan bahasa Java yaitu :
@@ -256,3 +256,8 @@ Menyembunyikan detail kerumitan dan hanya menampilkan fungsi-fungsi pentingnya s
 Kemampuan sebuah objek untuk memiliki banyak bentuk, biasanya dilakukan dengan menulis ulang (Override) fungsi dari induk agar sesuai dengan kebutuhan class anak.
 - Kode: `@Override public void tampilSpec() { ... }` pada class `Mahasiswa_Aktif`.
 - Penjelasan: Meskipun di class induk (Data_Pengguna) fungsi tampilSpec itu ada, tapi di class Mahasiswa_Aktif kita isi kodenya buat nampilin saldo dan daftar tugas secara spesifik.
+
+## Penjelasan keunikan yang membedakan dengan individu lain
+Project ini dibangun pakai prinsip Inheritance (Pewarisan) biar kode nggak ribet, di mana class `Mahasiswa_Aktif` tinggal narik data dasar kayak nama dan email dari class induk User pakai fungsi `super()`. Biar data makin aman dan nggak bisa diacak-acak sembarangan dari luar, aku terapkan Encapsulation (Pengkapsulan) dengan cara nyimpen saldo dan riwayat transaksi dalam variabel private yang cuma bisa diintip lewat _Getter Method_. Selain itu, ada juga konsep _Abstraction_ (Abstraksi) pakai _Abstract Class_ dan _Interface_ buat bikin kerangka sistem yang rapi, jadi setiap user wajib punya tampilan dashboard-nya sendiri-sendiri lewat fungsi `tampilSpec()`. Terakhir, ada Polymorphism (Banyak Bentuk) yang aku pakai buat nulis ulang (`Override`) fungsi dari induk biar pas dipanggil di class mahasiswa, tampilannya jadi lebih spesifik nampilin sisa uang dan daftar tugas.
+
+Untuk Keunikan yang membedakan dengan individu lain, sistem ini mastiin nggak ada data yang tertukar karena setiap objek punya `userId` dan `penggunaId` yang unik kayak NIM di kampus. Keunikan ini juga diperkuat sama fitur otomatisasi ID transaksi yang pakai hitungan milidetik waktu sekarang (`System.currentTimeMillis()`), jadi setiap catatan pengeluaran punya kode "KTP"-nya masing-masing yang nggak bakalan sama. Ditambah lagi, setiap individu punya "nasib" data yang beda-beda di dalam variabel `list_tugas` dan `dompet`, jadi walaupun kelasnya sama-sama `mahasiswa`, `isi saldo` dan `daftar kerjaan` tiap orang bakalan tetap beda sesuai inputan usernya masing-masing.
